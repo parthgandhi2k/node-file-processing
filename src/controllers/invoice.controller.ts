@@ -1,13 +1,8 @@
 import { RequestHandler } from "express";
-import XLSX from "xlsx";
 import path from "path";
 import createHttpError from "http-errors";
 import { getSuccessResponse } from "../utils/response.util";
-import { validateInvoiceItemsAndFormat } from "../helpers/invoice.helper";
-import { IInvoiceItemRaw, IInvoiceItemRawWithError, IProcessedInvoice } from "../types/invoice.type";
-import { getFileType } from "../utils/helper.util";
-import { readCsvToJson } from "../helpers/file-reader.helper";
-import { writeJsonIntoCsv, writeJsonIntoExcel } from "../helpers/file-writer.helper";
+import { IProcessedInvoice } from "../types/invoice.type";
 import invoiceProcessQueue from "../services/file-processing-queue.service";
 
 export function createInvoice(invoice: IProcessedInvoice) {
