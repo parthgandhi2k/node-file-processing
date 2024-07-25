@@ -1,0 +1,51 @@
+{
+  "name": "csv-excel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon src/server.ts",
+    "start": "npm run build && cross-env NODE_ENV=production node dist/server.js",
+    "build": "tsc -p .",
+    "test": "nyc --reporter=text mocha ./src/specs/*.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bull-arena": "^3.0.10",
+    "@types/chai": "^4.3.16",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/hpp": "^0.2.6",
+    "@types/http-errors": "^2.0.4",
+    "@types/mocha": "^10.0.7",
+    "@types/multer": "^1.4.11",
+    "@types/node": "^20.14.11",
+    "chai": "^4.4.1",
+    "mocha": "^10.7.0",
+    "nodemon": "^3.1.4",
+    "nyc": "^17.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@joi/date": "^2.1.1",
+    "bull": "^4.15.1",
+    "bull-arena": "^4.4.2",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "csv-parse": "^5.5.6",
+    "csv-stringify": "^6.5.0",
+    "dotenv": "^16.4.5",
+    "envalid": "^8.0.0",
+    "express": "^4.19.2",
+    "express-validation": "^4.1.1",
+    "hpp": "^0.2.3",
+    "http-errors": "^2.0.0",
+    "joi": "^17.13.3",
+    "moment-timezone": "^0.5.45",
+    "multer": "^1.4.5-lts.1",
+    "xlsx": "^0.18.5"
+  }
+}
